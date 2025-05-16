@@ -1,0 +1,212 @@
+:root {
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --border-radius-one: 1px;
+  --border-radius-two: 0.5px;
+  --hover-color: rgb(139, 139, 139);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 80px;
+  background: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 5px;
+  overflow: hidden;
+  border-right: 1px solid var(--color-secondary);
+}
+
+.sidebar.collapsed {
+  width: 0;
+  padding: 0;
+}
+
+.sidebar button {
+  width: 60px;
+  height: 50px;
+  font-size: 0.7em;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: 1px solid white;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  color: var(--color-primary);
+  background-color: var(--hover-color);
+}
+
+#toggle-btn {
+  height: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border: 1px solid white;
+}
+
+.btn-text {
+  width: 25px;
+  display: inline-block;
+  transform: rotate(90deg);
+  white-space: nowrap;
+  transform-origin: center;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--color-primary);
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.hero {
+  background: var(--color-primary);
+  padding: 40px;
+  text-align: center;
+}
+
+#title {
+  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
+  font-size: 72px;
+  margin-bottom: 20px;
+}
+
+.hero form button {
+  height: 50px;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: var(--border-radius-two) dotted var(--color-secondary);
+  cursor: pointer;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+.hero form button:hover {
+  background-color: var(--hover-color);
+  color: var(--color-primary);
+}
+
+/* Chat page */
+.chat-box {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  max-width: 70%;
+}
+
+.user-msg {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.ai-msg {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.bubble {
+  background-color: #222;
+  padding: 12px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  border: 1px solid #444;
+}
+
+.chat-form {
+  display: flex;
+  padding: 15px;
+  background-color: var(--color-primary);
+  border-top: 1px dotted var(--color-secondary);
+}
+
+.chat-form input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  background-color: #111;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.chat-form button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: var(--border-radius-two) dotted var(--color-secondary);
+  cursor: pointer;
+}
+
+.chat-form button:hover {
+  background-color: var(--hover-color);
+  color: var(--color-primary);
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+.clear {
+  color: white;
+  background-color: #000;
+  border: 1px solid white;
+}
+
+.gemini-btn {
+  color: white;
+  background-color: black;
+  border: 0.5px dotted white;
+  height: 100px;
+  width: 100px;
+}
+
+button {
+  cursor: pointer;
+}

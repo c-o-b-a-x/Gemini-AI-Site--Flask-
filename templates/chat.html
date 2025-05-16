@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini API Chat</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <button onclick="location.href='/'">Home</button>
+      <a href="/chat"><button>Chat With Gemini</button></a>
+    </div>
+
+    <div class="toggle">
+      <button id="toggle-btn" onclick="toggleSidebar()">
+        <span class="btn-text">Toggle Sidebar</span>
+      </button>
+    </div>
+
+    <div class="main-content">
+      <header>Chat with Gemini</header>
+
+      <div class="chat-box">
+        {% if prompt %}
+        <div class="message user-msg">
+          <div class="bubble">{{ prompt }}</div>
+        </div>
+        {% endif %} {% if response_text %}
+        <div class="message ai-msg">
+          <div class="bubble">{{ response_text }}</div>
+        </div>
+        {% endif %}
+      </div>
+
+      <form class="chat-form" method="POST" action="/chat">
+        <input
+          type="text"
+          name="input"
+          placeholder="Ask something..."
+          required
+        />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

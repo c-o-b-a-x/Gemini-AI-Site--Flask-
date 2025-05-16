@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/styles.css')}}"
+    />
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <button>Home</button>
+      <a href="/chat"><button>Chat With Gemini</button></a>
+    </div>
+    <div class="toggle">
+      <button id="toggle-btn" onclick="toggleSidebar()">
+        <span class="btn-text">Toggle Sidebar</span>
+      </button>
+    </div>
+
+    <div class="main-content">
+      <header id="title">Personal Projects</header>
+      <div class="hero">
+        <a href="/chat"
+          ><button class="btn-primary gemini-btn">
+            Click Here To Chat with Gemini
+          </button></a
+        >
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
